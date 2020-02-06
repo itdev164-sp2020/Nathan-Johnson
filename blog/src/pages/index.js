@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+
+
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home"/>
@@ -12,7 +14,7 @@ const IndexPage = ({ data }) => (
       data.allContentfulBlogPost.edges.map(edge => (
         <li>
           <Link to={edge.node.slug} key={edge.node.id}>
-          {edge.node.slug}
+        {edge.node.title} 
           </Link>
         </li>
 
@@ -32,6 +34,7 @@ export const query = graphql`
       node {
         id
         slug
+        title
       }
     }
   }

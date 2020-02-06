@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Theories on space`,
+    title: `Space Theories`,
     description: `Space is not what it seems`,
     author: `@Nathan`,
-    contact: {
+    contact: 
+    {
       Name: 'Nate',
       location: 'Milwauke',
       company: 'NATIONAL JAWA TRADE',
