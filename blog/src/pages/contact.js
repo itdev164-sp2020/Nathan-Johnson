@@ -10,7 +10,7 @@ const Contact = ({ data }) => {
     <Layout>
     <SEO title="Home"/>
     <h1>Contact Page</h1>
-    <p>Please inquir:</p>
+    <p>Please inquire:</p>
     <div>{company}</div>
     <p>{`${company} was started by ${Name}`}</p>
     <p>{location}</p>

@@ -9,13 +9,13 @@ const About = ({ data }) => {
   return (
     <Layout>
     <SEO title="Home"/>
-    <h1>Aboput Us</h1>
+    <h1>About Space</h1>
     <p>{`${company} was started by ${Name}`}</p>
     <p>{`${company} is awesome`}</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
      
     </div>
-    <Link to="/">Home</Link>
+    <Link to="/">Back Home</Link>
   </Layout>
   )
   }

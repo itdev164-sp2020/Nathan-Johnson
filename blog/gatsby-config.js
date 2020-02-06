@@ -1,15 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: `Nate Blog`,
-    description: `Kickstart your life with this blog`,
+    title: `Theories on space`,
+    description: `Space is not what it seems`,
     author: `@Nathan`,
     contact: {
       Name: 'Nate',
       location: 'Milwauke',
-      company: 'njt',
+      company: 'NATIONAL JAWA TRADE',
     }
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-contentful',
+      options:{
+        spaceId: '4i29g2g2d19j',
+        accessToken: 'BPp8cJoKyVSXh1bGrcT5vruqQIRJ0qJYFXWRsglpkBc'
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
