@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-         This is a footer
+         Space is not as it seems
         </footer>
       </div>
     </div>
