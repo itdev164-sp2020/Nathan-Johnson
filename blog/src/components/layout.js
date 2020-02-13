@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-         Space is not as it seems
+         Space is not as it seems @ 2020 NATHAN JOHNSON
         </footer>
       </div>
     </div>

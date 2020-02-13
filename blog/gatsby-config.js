@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Space Theories`,
@@ -14,10 +18,11 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options:{
-        spaceId: '4i29g2g2d19j',
-        accessToken: 'BPp8cJoKyVSXh1bGrcT5vruqQIRJ0qJYFXWRsglpkBc'
+        spaceId: `${process.env.SPACE_ID}`,
+        accessToken:`${process.env.ACCESS_TOKEN}`
       }
     },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

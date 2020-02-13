@@ -16,6 +16,10 @@ const IndexPage = ({ data }) => (
           <Link to={edge.node.slug} key={edge.node.id}>
         {edge.node.title} 
           </Link>
+          <div>
+          <img src={edge.node.heroImage.fluid.src} alt='Hero'/>
+          </div>
+          <div>{edge.node.body.childMarkdownRemark.excerpt}</div>
         </li>
 
       ))
@@ -32,9 +36,19 @@ export const query = graphql`
   allContentfulBlogPost {
     edges {
       node {
-        id
         slug
         title
+        id
+        heroImage {
+          fluid(maxWidth: 300) {
+            src
+          }
+        }
+        body {
+          childMarkdownRemark {
+            excerpt
+          }
+        }
       }
     }
   }
