@@ -25,9 +25,8 @@ exports.createPages = ({graphql, actions }) => {
                   path: edge.node.slug,
                   component: path.resolve(`./src/templates/blog-post.js`),
                   context: {
-                      slug: edge.node.slug,
-                      id: edge.node.id,
-                      title: edge.node.title,
+                      slug: edge.node.slug
+                     
                   }
               })
           })

@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 
 
 
+
+
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home"/>
@@ -12,15 +14,16 @@ const IndexPage = ({ data }) => (
     <ul>
     {
       data.allContentfulBlogPost.edges.map(edge => (
-        <li>
-          <Link to={edge.node.slug} key={edge.node.id}>
-        {edge.node.title} 
-          </Link>
-          <div>
+        <div>
+          <Link to={edge.node.slug} key={edge.node.id} style={{color: "black", textDecoration: "none"}}>
+<h2> {edge.node.title}  </h2>
+         
+        <div></div>
           <img src={edge.node.heroImage.fluid.src} alt='Hero'/>
-          </div>
-          <div>{edge.node.body.childMarkdownRemark.excerpt}</div>
-        </li>
+          </Link>
+         <p>{edge.node.body.childMarkdownRemark.excerpt}
+         </p> 
+        </div>
 
       ))
         }
@@ -40,7 +43,7 @@ export const query = graphql`
         title
         id
         heroImage {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 600) {
             src
           }
         }
