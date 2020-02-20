@@ -4,13 +4,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 
-
-
-
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home"/>
-    
+    <body>
     <ul>
     {
       data.allContentfulBlogPost.edges.map(edge => (
@@ -28,7 +25,7 @@ const IndexPage = ({ data }) => (
       ))
         }
     </ul>
-
+    </body>
     </Layout>
 )
 

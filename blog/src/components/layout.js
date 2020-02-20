@@ -8,9 +8,20 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled, { ThemeProvider } from 'styled-components'
 
 import Header from "./header"
-import "./layout.css"
+import GlobalStyle from './GlobalStyle/GlobalStyle'
+
+//Theme 
+import { Gray } from '../themes/gray'
+
+const Content = styled.div`
+margin: 0 auto;
+max-width: 960px;
+padding: 0 1.0875rem 1.45rem;
+padding-top: 0;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,22 +35,17 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div>
+    <ThemeProvider theme={Gray}>
+    <GlobalStyle/>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <Content>
         <main>{children}</main>
         <footer>
          Existance is Futile @ 2020 NATHAN JOHNSON
         </footer>
-      </div>
-    </div>
-  )
+      </Content>
+      </ThemeProvider>
+    )
 }
 
 Layout.propTypes = {
