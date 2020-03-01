@@ -1,26 +1,25 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
-});
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
     title: `Space Theories`,
     description: `Space is not what it seems`,
     author: `@Nathan`,
-    contact: 
-    {
-      Name: 'Nate',
-      location: 'Milwauke',
-      company: 'NATIONAL JAWA TRADE',
-    }
+    contact: {
+      Name: "Nate",
+      location: "Milwauke",
+      company: "NATIONAL JAWA TRADE",
+    },
   },
   plugins: [
     {
-      resolve: 'gatsby-source-contentful',
-      options:{
+      resolve: "gatsby-source-contentful",
+      options: {
         spaceId: `${process.env.SPACE_ID}`,
-        accessToken:`${process.env.ACCESS_TOKEN}`
-      }
+        accessToken: `${process.env.ACCESS_TOKEN}`,
+      },
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
