@@ -10,19 +10,18 @@ module.exports = {
     contact: {
       Name: "Nate",
       location: "Milwauke",
-      company: "NATIONAL JAWA TRADE",
+      company: "NJT",
     },
   },
   plugins: [
     {
       resolve: "gatsby-source-contentful",
       options: {
-        spaceId: `${process.env.SPACE_ID}`,
-        accessToken: `${process.env.ACCESS_TOKEN}`,
+        spaceId: `4i29g2g2d19j`,
+        accessToken: `BPp8cJoKyVSXh1bGrcT5vruqQIRJ0qJYFXWRsglpkBc`,
       },
     },
     `gatsby-transformer-remark`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

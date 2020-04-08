@@ -8,19 +8,19 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from "styled-components"
 
-import Header from "./header"
-import GlobalStyle from './GlobalStyle/GlobalStyle'
+import Header from "../Header/header"
+import GlobalStyle from "../GlobalStyle/GlobalStyle"
 
-//Theme 
-import { Gray } from '../themes/gray'
+//Theme
+import { Gray } from "../../themes/gray"
 
 const Content = styled.div`
-margin: 0 auto;
-max-width: 960px;
-padding: 0 1.0875rem 1.45rem;
-padding-top: 0;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1.0875rem 1.45rem;
+  padding-top: 0;
 `
 
 const Layout = ({ children }) => {
@@ -36,16 +36,14 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={Gray}>
-    <GlobalStyle/>
+      <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <Content>
-        <main>{children}</main>
-        <footer>
-         Existance is Futile @ 2020 NATHAN JOHNSON
-        </footer>
+        {children}
+        <footer>Existance is Futile @ 2020 NATHAN JOHNSON</footer>
       </Content>
-      </ThemeProvider>
-    )
+    </ThemeProvider>
+  )
 }
 
 Layout.propTypes = {
