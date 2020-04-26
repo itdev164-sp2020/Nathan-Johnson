@@ -13,6 +13,9 @@ import styled, { ThemeProvider } from "styled-components"
 import Header from "../Header/header"
 import GlobalStyle from "../GlobalStyle/GlobalStyle"
 
+import { Main } from "../Main"
+import { Footer } from "../Footer"
+
 //Theme
 import { Gray } from "../../themes/gray"
 
@@ -39,8 +42,8 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <Content>
-        {children}
-        <footer>Existance is Futile @ 2020 NATHAN JOHNSON</footer>
+        <Main> {children} </Main>
+        <footer>2020 NATHAN JOHNSON</footer>
       </Content>
     </ThemeProvider>
   )
